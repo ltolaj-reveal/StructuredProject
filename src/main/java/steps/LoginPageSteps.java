@@ -8,10 +8,8 @@ import utilities.BasePage;
 public class LoginPageSteps {
     LoginElements loginElements = new LoginElements();
 
-    WebDriver driver = BasePage.getInstance().driver;
-
     public LoginPageSteps(){
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(BasePage.getDriver(), this);
     }
 
     public void setEmail(String email){

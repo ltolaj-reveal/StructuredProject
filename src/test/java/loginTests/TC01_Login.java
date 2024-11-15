@@ -10,9 +10,9 @@ import steps.LoginPageSteps;
 import utilities.BasePage;
 
 public class TC01_Login {
-    LoginPageSteps login = new LoginPageSteps();
 
-    WebDriver driver = BasePage.getInstance().driver;
+    private final WebDriver driver = BasePage.getDriver();
+    LoginPageSteps login = new LoginPageSteps();
 
     public TC01_Login(){
         PageFactory.initElements(driver, this);

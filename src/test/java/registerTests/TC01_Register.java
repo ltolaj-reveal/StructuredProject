@@ -1,7 +1,6 @@
 package registerTests;
 
 import globals.GlobalVariables;
-import net.bytebuddy.agent.builder.AgentBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
@@ -11,9 +10,9 @@ import steps.RegisterPageSteps;
 import utilities.BasePage;
 
 public class TC01_Register {
+    private final WebDriver driver = BasePage.getDriver();
     RegisterPageSteps register = new RegisterPageSteps();
 
-    WebDriver driver = BasePage.getInstance().driver;
 
     public TC01_Register(){
         PageFactory.initElements(driver, this);
@@ -25,7 +24,7 @@ public class TC01_Register {
     }
 
     @Test
-    public void testRegister() throws InterruptedException {
+    public void testRegister(){
         register.registerAndSetCredentials(
                 GlobalVariables.name,
                 GlobalVariables.lastname,
@@ -36,16 +35,11 @@ public class TC01_Register {
                 GlobalVariables.company,
                 GlobalVariables.password
         );
-        try {
-            Thread.sleep(30000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @AfterTest
     public void terminate(){
-        driver.quit();
         driver.close();
+        driver.quit();
     }
 }

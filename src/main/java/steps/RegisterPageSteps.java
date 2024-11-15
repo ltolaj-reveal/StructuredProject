@@ -15,10 +15,9 @@ import java.time.Duration;
 
 public class RegisterPageSteps {
     RegisterElements registerElements = new RegisterElements();
-    WebDriver driver = BasePage.getInstance().driver;
 
     public RegisterPageSteps(){
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(BasePage.getDriver(), this);
     }
 
     public void setGender(){
@@ -64,9 +63,9 @@ public class RegisterPageSteps {
         registerElements.confirmPassword.sendKeys(password);
     }
 
-    public void setRegisterButton(){
+    public void clickRegisterButton(){
         registerElements.registerButton.click();
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class*='register-continue-button']")));
+        new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class*='register-continue-button']")));
     }
 
     public void registerAndSetCredentials(String name, String lastname, String day, String month, String year, String email, String company, String password) {
@@ -80,7 +79,7 @@ public class RegisterPageSteps {
         setPassword(password);
         setConfirmPassword(password);
 
-        setRegisterButton();
+        clickRegisterButton();
 
         GlobalVariables.email = email;
         GlobalVariables.password = password;

@@ -7,10 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.BasePage;
 
 public class LoginElements {
-    WebDriver driver = BasePage.getInstance().driver;
+
+    // //method getDriver() must return a WebDriver. If not -> fail. The static method that comes must be WebDriver.
 
     public LoginElements(){
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(BasePage.getDriver(), this);
     }
 
     @FindBy(css = "input[id='Email']")
