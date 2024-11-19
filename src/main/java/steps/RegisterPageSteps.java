@@ -20,10 +20,6 @@ public class RegisterPageSteps {
         PageFactory.initElements(BasePage.getDriver(), this);
     }
 
-    public void setGender(){
-        registerElements.gender.click();
-    }
-
     public void setName(String name){
         registerElements.name.sendKeys(name);
     }
@@ -32,27 +28,8 @@ public class RegisterPageSteps {
         registerElements.lastname.sendKeys(lastname);
     }
 
-    public void setDateOfBirth(String day, String month, String year) {
-        Select daySelect = new Select(registerElements.birthDay);
-        daySelect.selectByVisibleText(day);
-
-        Select monthSelect = new Select(registerElements.birthMonth);
-        monthSelect.selectByVisibleText(month);
-
-        Select yearSelect = new Select(registerElements.birthYear);
-        yearSelect.selectByVisibleText(year);
-    }
-
     public void setEmail(String email){
         registerElements.email.sendKeys(email);
-    }
-
-    public void setCompany(String company){
-        registerElements.company.sendKeys(company);
-    }
-
-    public void setNewsletter(){
-        registerElements.newsletter.click();
     }
 
     public void setPassword(String password){
@@ -65,17 +42,13 @@ public class RegisterPageSteps {
 
     public void clickRegisterButton(){
         registerElements.registerButton.click();
-        new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class*='register-continue-button']")));
+        //new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class*='register-continue-button']")));
     }
 
-    public void registerAndSetCredentials(String name, String lastname, String day, String month, String year, String email, String company, String password) {
-        setGender();
+    public void registerAndSetCredentials(String name, String lastname, String email, String password) {
         setName(name);
         setLastName(lastname);
-        setDateOfBirth(day, month, year);
         setEmail(email);
-        setCompany(company);
-        setNewsletter();
         setPassword(password);
         setConfirmPassword(password);
 

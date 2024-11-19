@@ -7,47 +7,27 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.BasePage;
 
 public class RegisterElements {
-    WebDriver driver = BasePage.getInstance().driver;
 
     public RegisterElements(){
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(BasePage.getDriver(), this);
     }
 
-    @FindBy(css = "input[id='gender-male']")
-    public WebElement gender;
-
-    @FindBy(css = "input[id='FirstName']")
+    @FindBy(css = "input[id='firstname']")
     public WebElement name;
 
-    @FindBy(css = "input[id='LastName']")
+    @FindBy(css = "input[id='lastname']")
     public WebElement lastname;
 
-    @FindBy(css = "select[name='DateOfBirthDay']")
-    public WebElement birthDay;
-
-    @FindBy(css = "select[name='DateOfBirthMonth']")
-    public WebElement birthMonth;
-
-    @FindBy(css = "select[name='DateOfBirthYear']")
-    public WebElement birthYear;
-
-    @FindBy(css = "input[id='Email']")
+    @FindBy(css = "input[id='email_address']")
     public WebElement email;
 
-    @FindBy(css = "input[id='Company']")
-    public WebElement company;
-
-    @FindBy(css = "input[id='Newsletter']")
-    public WebElement newsletter;
-
-    @FindBy(css= "input[id='Password']")
+    @FindBy(css= "input[id='password']")
     public WebElement password;
 
-    @FindBy(css= "input[id='ConfirmPassword']")
+    @FindBy(css= "input[id='password-confirmation']")
     public WebElement confirmPassword;
 
-    @FindBy(css= "button[id='register-button']")
+    @FindBy(css= "button[class='action submit primary']")
     public WebElement registerButton;
-
 
 }

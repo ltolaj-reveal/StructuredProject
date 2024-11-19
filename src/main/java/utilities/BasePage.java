@@ -8,14 +8,12 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class BasePage {
 
-    // qasje statike vetem brenda klases
+    // çasje statike vetem brenda klases
     private static WebDriver driver;
-
 
     public static BasePage getBasePage(){
         return new BasePage();
     }
-
 
     public static WebDriver getDriver(){
         if (driver == null){

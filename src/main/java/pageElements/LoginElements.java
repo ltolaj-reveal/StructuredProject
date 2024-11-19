@@ -14,13 +14,13 @@ public class LoginElements {
         PageFactory.initElements(BasePage.getDriver(), this);
     }
 
-    @FindBy(css = "input[id='Email']")
+    @FindBy(css = "input[id='email']")
     public WebElement email;
 
-    @FindBy(css = "input[id='Password']")
+    @FindBy(css = "input[id='pass']")
     public WebElement password;
 
-    @FindBy(css = "button[class*='login-button']")
+    @FindBy(css = "button[id='send2']")
     public WebElement loginButton;
 
 

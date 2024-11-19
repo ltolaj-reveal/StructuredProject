@@ -13,7 +13,6 @@ public class TC01_Register {
     private final WebDriver driver = BasePage.getDriver();
     RegisterPageSteps register = new RegisterPageSteps();
 
-
     public TC01_Register(){
         PageFactory.initElements(driver, this);
     }
@@ -28,11 +27,7 @@ public class TC01_Register {
         register.registerAndSetCredentials(
                 GlobalVariables.name,
                 GlobalVariables.lastname,
-                GlobalVariables.day,
-                GlobalVariables.month,
-                GlobalVariables.year,
                 GlobalVariables.email,
-                GlobalVariables.company,
                 GlobalVariables.password
         );
     }
