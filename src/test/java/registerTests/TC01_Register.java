@@ -15,11 +15,15 @@ public class TC01_Register {
 
     public TC01_Register(){
         PageFactory.initElements(driver, this);
+        init();
     }
 
     @BeforeTest
     public void init(){
-        driver.get(GlobalVariables.registerUrl);
+        if (Boolean.FALSE.equals(GlobalVariables.isUrlOpened)){
+            driver.get(GlobalVariables.loginUrl);
+            GlobalVariables.isUrlOpened = true;
+        }
     }
 
     @Test

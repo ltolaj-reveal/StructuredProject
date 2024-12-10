@@ -16,19 +16,22 @@ public class TC01_Login {
 
     public TC01_Login(){
         PageFactory.initElements(driver, this);
+        init();
     }
 
     @BeforeTest
     public void init(){
-        driver.get(GlobalVariables.loginUrl);
+        if (Boolean.FALSE.equals(GlobalVariables.isUrlOpened)){
+            driver.get(GlobalVariables.loginUrl);
+            GlobalVariables.isUrlOpened = true;
+        }
     }
 
     @Test
-    public void testLoginWithCredentials() throws InterruptedException {
+    public void testLoginWithCredentials(){
         login.setEmail(GlobalVariables.email);
         login.setPassword(GlobalVariables.password);
         login.clickLoginButton();
-        Thread.sleep(5000);
     }
 
     @AfterTest

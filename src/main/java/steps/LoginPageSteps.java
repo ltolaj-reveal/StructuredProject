@@ -20,7 +20,8 @@ public class LoginPageSteps {
         loginElements.password.sendKeys(password);
     }
 
-    public void clickLoginButton(){
+    public HomePageSteps clickLoginButton(){
         loginElements.loginButton.click();
+        return new HomePageSteps();
     }
 }

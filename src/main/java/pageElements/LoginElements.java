@@ -8,7 +8,7 @@ import utilities.BasePage;
 
 public class LoginElements {
 
-    // //method getDriver() must return a WebDriver. If not -> fail. The static method that comes must be WebDriver.
+    // //method getDriver() must return a WebDriver. If not -> fail.
 
     public LoginElements(){
         PageFactory.initElements(BasePage.getDriver(), this);
@@ -22,6 +22,4 @@ public class LoginElements {
 
     @FindBy(css = "button[id='send2']")
     public WebElement loginButton;
-
-
 }

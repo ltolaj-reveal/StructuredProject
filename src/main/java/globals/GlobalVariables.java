@@ -9,10 +9,8 @@ public class GlobalVariables {
     public static String registerUrl = "https://magento.softwaretestingboard.com/customer/account/create/";
     public static final String name = "Lorik";
     public static final String lastname = "Tolaj";
-    public static String email = "loriktolaj123@gmail.com";
+    public static String email = "loriktolaj12345@gmail.com";
     public static String password = "Manunitedchampion123";
     public static String browserType = "chrome";
-
-    
-
+    public static boolean isUrlOpened = false;
 }
